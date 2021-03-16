@@ -11,12 +11,14 @@ ul {
   --title-text-color: #212121;
   --text-color: #757575;
   --accent-color: #2196f3;
+  --accent-overley-color: rgba(33, 150, 243, 0.9);
   --primary-color-black: #000000;
   --primary-white-color: #ffffff;
   --background-color: #f5f4fa;
   --border-color: #eeeeee;
   --icon-color: #afb1b8;
   --footlink-bg-color: rgba(255, 255, 255, 0.1);
+  --doing-bg-color: rgba(47, 48, 58, 0.8);
 }
 
 body {
@@ -60,14 +62,29 @@ body {
   line-height: 1.15px;
 
   padding: 32px 0;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav-link:hover {
   color: var(--accent-color);
 }
 
-.site-nav .site-nav-link.current {
+.site-nav-link.current {
   color: var(--accent-color);
+  position: relative;
+}
+
+.site-nav-link.current::after {
+  position: absolute;
+  bottom: 0;
+
+  content: '';
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
 }
 
 .contacts-link {
@@ -257,6 +274,28 @@ header {
   padding-bottom: 94px;
 }
 
+.doing-list-item {
+  position: relative;
+}
+
+.doing-list-item p {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 70px;
+
+  color: var(--primary-white-color);
+  background-color: var(--doing-bg-color);
+
+  padding: 27px 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.17;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* OUR TEAM */
 
 .our-team-title {
@@ -322,6 +361,9 @@ header {
   border-radius: 50%;
   fill: var(--icon-color);
   background-color: var(--primary-white-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-link:hover {
@@ -366,6 +408,9 @@ header {
   border-radius: 4px;
 
   fill: var(--icon-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover {
@@ -463,6 +508,9 @@ footer {
   border-radius: 50%;
   fill: var(--primary-white-color);
   background-color: var(--footlink-bg-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-link:hover {
@@ -492,6 +540,9 @@ footer {
   line-height: 1.6;
 
   padding: 6px 22px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-list-item:not(:last-child) {
@@ -512,6 +563,59 @@ footer {
 
 .projects-link {
   text-decoration: none;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progect-list-item {
+  position: relative;
+  width: 370px;
+}
+
+.project-thumb {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.project-thumb::before {
+  position: absolute;
+
+  content: '';
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--accent-overley-color);
+
+  /* opacity: 0; */
+
+  transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-thrumb {
+  position: absolute;
+  top: 0;
+
+  padding: 63px 24px;
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+
+  color: var(--primary-white-color);
+
+  opacity: 0;
+}
+
+.projects-link:hover .text-thrumb {
+  opacity: 1;
+}
+
+.projects-link:hover ::before {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projects-link:hover {
