@@ -64,8 +64,9 @@
                     для вашего бизнеса
                 </h1>
             
-                <button type="button" class="button service-batton">Заказать услугу</button>
+                <button data-modal-open type="button" class="button service-batton">Заказать услугу</button>
             </div>
+
         </section>
 
         <!--Преимущества-->
@@ -405,6 +406,20 @@
         </div>
 
     </footer>
+
+    <!-- Модалка -->
+
+    <div data-modal class="backdrop is-hidden">
+        <div class="modal">
+            <button data-modal-close class="modal-icon">
+                <svg width="30" height="30">
+                    <use href="./img/symbol-defs.svg#close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 
 </body>
 
