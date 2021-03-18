@@ -131,6 +131,10 @@ header {
 
 /* HERO */
 
+.container.hero {
+  width: 1600px;
+}
+
 .hero {
   background-color: #2f303a;
   max-width: 1600px;
@@ -198,7 +202,6 @@ header {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-
 }
 
 .modal {
@@ -211,7 +214,8 @@ header {
   height: 581px;
 
   background-color: var(--primary-white-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
@@ -556,8 +560,7 @@ footer {
   fill: var(--primary-white-color);
   background-color: var(--footlink-bg-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-link:hover {
@@ -574,6 +577,8 @@ footer {
 .our-projects-filter-button:hover {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .our-projects-filter-button {
@@ -589,7 +594,8 @@ footer {
   padding: 6px 22px;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-list-item:not(:last-child) {
